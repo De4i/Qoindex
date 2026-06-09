@@ -1,0 +1,8 @@
+{
+  "name": "QoinDEX",
+  "description": "A high-fidelity full-stack Cyberpunk AMM Decentralized Exchange featuring live token swapping, liquidity pooling, USDC \u0026 USDT yield staking, 24-hour testnet faucets, and automated reward dispatches.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

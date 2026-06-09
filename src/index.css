@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Cyberpunk animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hide scrollbar helpers for bento grids */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom caret and scroll layout adjustments */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #050505;
+}
+
+/* Elegant dark custom glow filters and borders */
+.elegant-glass {
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+.elegant-glass-fuchsia {
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(217, 70, 239, 0.2);
+}
+
+.elegant-glass-white {
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Standard select dropdown style fixes in dark mode */
+select option {
+  background-color: #050505 !important;
+  color: #e2e8f0 !important;
+}
+
+/* Neo-cyber shadow style */
+.cyber-shadow-cyan {
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.25);
+}
+
+.cyber-shadow-fuchsia {
+  box-shadow: 0 0 15px rgba(217, 70, 239, 0.2);
+}
+
+/* Flat cyberpunk outline shadow button styling */
+.btn-cyber {
+  box-shadow: 4px 4px 0px #f5d0fe;
+  transition: all 0.2s ease-in-out;
+}
+.btn-cyber:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #f5d0fe;
+}
+
+/* ==========================================
+   CYBER LIGHT THEME OVERRIDES
+   ========================================== */
+html.light, html.light body {
+  background-color: #ffffff !important; /* Premium clean spotless white background */
+  background-image: none !important; /* Pristine solid white backdrop */
+  color: #0c121e !important; /* Sharp Carbon/Slate text primary */
+}
+
+/* Base utility overrides specifically inside light theme for total legibility */
+html.light .text-white {
+  color: #0d1527 !important; /* Max contrast dark slate-950 */
+}
+
+html.light .text-slate-100,
+html.light .text-slate-200,
+html.light .text-slate-300 {
+  color: #0f172a !important; /* Deep dark charcoal */
+}
+
+html.light .text-slate-350,
+html.light .text-zinc-300,
+html.light .text-zinc-400 {
+  color: #1e293b !important; /* High contrast default slate-800 */
+}
+
+html.light .text-slate-400,
+html.light .text-zinc-500,
+html.light .text-slate-500 {
+  color: #334155 !important; /* Elegant slate-700 for extremely readable descriptions */
+}
+
+html.light .text-zinc-550,
+html.light .text-zinc-555,
+html.light .text-zinc-600,
+html.light .text-zinc-650,
+html.light .text-slate-600 {
+  color: #475569 !important; /* Readable slate-600 for subtext and captions */
+}
+
+/* Interior inner cards background overlay inversion (Cyber Glass to Cyber Card Panels) */
+html.light .bg-black\/40,
+html.light .bg-black\/50,
+html.light .bg-black\/30 {
+  background-color: #ffffff !important; /* Crisp pure white inner panel */
+  border-color: #cbd5e1 !important; /* slate-300 border */
+  color: #0f172a !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02) !important;
+}
+
+html.light .border-zinc-900 {
+  border-color: #cbd5e1 !important; /* slate-300 */
+}
+
+html.light .hover\/border-zinc-800:hover {
+  border-color: #94a3b8 !important; /* slate-400 */
+}
+
+html.light .border-white\/5 {
+  border-color: #cbd5e1 !important; /* slate-300 */
+}
+
+/* Forms, input fields, dropdown menus */
+html.light select, html.light option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html.light input {
+  color: #0d121d !important; /* Solid dark carbon text inside active inputs */
+}
+
+html.light input::placeholder {
+  color: #94a3b8 !important; /* Clear placeholder */
+}
+
+/* Standard glass dashboards, panels, widgets, sidebar rails */
+html.light .bg-zinc-950\/40,
+html.light .bg-zinc-950\/60,
+html.light .bg-slate-[900]\/50,
+html.light .bg-slate-900\/50,
+html.light .bg-slate-\[900\]\/50,
+html.light .bg-slate-900\/10 {
+  background-color: #ffffff !important; /* Crisp flat solid white plates */
+  border-color: #cbd5e1 !important; /* Cool slate border */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 4px 4px 0px rgba(15, 23, 42, 0.05) !important;
+}
+
+/* Inner block boxes (statistics backgrounds, sub-info panels) */
+html.light .bg-white\/5,
+html.light .bg-zinc-950\/50,
+html.light .bg-zinc-955\/50,
+html.light .bg-zinc-900\/50,
+html.light .bg-zinc-950\/30,
+html.light .bg-zinc-950\/55,
+html.light .bg-zinc-950\/80,
+html.light .bg-white\/\[0\.02\] {
+  background-color: #ffffff !important; /* Gentle clean white card backdrop */
+  border-color: #cbd5e1 !important; /* slate-300 */
+}
+
+/* disabled elements */
+html.light .bg-slate-\[850\], html.light .bg-slate-850 {
+  background-color: #f1f5f9 !important;
+  color: #94a3b8 !important;
+  border-color: #cbd5e1 !important;
+}
+
+html.light .bg-slate-\[800\], html.light .bg-slate-800 {
+  background-color: #e2e8f0 !important;
+  color: #475569 !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* Special Badges: Unlink & Switch theme buttons */
+html.light .bg-rose-950\/45 {
+  background-color: #fef2f2 !important; /* Vibrant clear light rose */
+  border-color: #fca5a5 !important;
+  color: #b91c1c !important; /* Intense bright crimson text */
+}
+
+html.light .bg-rose-950\/45:hover {
+  background-color: #fee2e2 !important;
+  border-color: #ef4444 !important;
+  color: #991b1b !important;
+}
+
+/* Staking sub-matrix warning or detail plates */
+html.light .bg-amber-950\/15,
+html.light .bg-amber-950\/20 {
+  background-color: #fffbeb !important; /* Mild glowing warm orange highlights */
+  border-color: #fde68a !important;
+}
+
+html.light .bg-amber-500\/15 {
+  background-color: #fff7ed !important;
+  border-color: #ffedd5 !important;
+  color: #c2410c !important;
+}
+
+/* Core thematic neon cyberpunk colors adapted to high contrast light layouts */
+html.light .text-amber-300 {
+  color: #b45309 !important; /* Deep warming premium amber code */
+}
+
+html.light .text-amber-400 {
+  color: #b45309 !important; /* Legible Dark Amber */
+}
+
+html.light .text-amber-450 {
+  color: #78350f !important;
+}
+
+html.light .text-cyan-400 {
+  color: #0891b2 !important; /* Cybernetic solid dark cyan code */
+}
+
+html.light .text-cyan-450 {
+  color: #0e7490 !important;
+}
+
+html.light .text-fuchsia-400 {
+  color: #c026d3 !important; /* Vibrant high contrast fuchsia */
+}
+
+html.light .text-fuchsia-450 {
+  color: #86198f !important;
+}
+
+html.light .text-emerald-400 {
+  color: #16a34a !important; /* Forest green vector text */
+}
+
+html.light .text-emerald-450 {
+  color: #15803d !important;
+}
+
+html.light .text-blue-400 {
+  color: #2563eb !important; /* Legible standard blue */
+}
+
+html.light .text-yellow-500 {
+  color: #a16207 !important;
+}
+
+/* Cyber color Badges background containers */
+html.light .bg-emerald-500\/10 {
+  background-color: #f0fdf4 !important; /* Soft mint wrap */
+  border-color: rgba(22, 163, 74, 0.2) !important;
+  color: #16a34a !important;
+}
+
+html.light .bg-amber-500\/15 {
+  background-color: #fffbeb !important;
+  border-color: rgba(217, 119, 6, 0.2) !important;
+  color: #b45309 !important;
+}
+
+html.light .bg-cyan-500\/15 {
+  background-color: #ecfeff !important;
+  border-color: rgba(14, 116, 144, 0.2) !important;
+  color: #0891b2 !important;
+}
+
+html.light .bg-purple-500\/10 {
+  background-color: #faf5ff !important;
+  border-color: rgba(109, 40, 217, 0.2) !important;
+  color: #6d28d9 !important;
+}
+
+/* Navigation layout and tabs elements */
+html.light .bg-slate-900 {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html.light .bg-slate-900\/10 {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* Nav selection tab styling */
+html.light .border-cyan-400.text-cyan-400.bg-cyan-500\/15 {
+  background-color: #ecfeff !important;
+  color: #0891b2 !important;
+  border-color: #0891b2 !important;
+}
+
+/* Logo showcase gradient fix for text */
+html.light .text-transparent.bg-gradient-to-r.from-white {
+  background-image: linear-gradient(to right, #0f172a, #0891b2) !important;
+  color: transparent !important;
+}
+
